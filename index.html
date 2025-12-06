@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
   <meta charset="UTF-8" />
   <title>Potočarka – Natural Living</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Potočarka – a space for gentle, natural living, balance and nourishment." />
-
+  <meta name="description" content="Potočarka – prostor za nežniji, prirodniji život." />
   <style>
     :root {
       --bg: #f5f3ec;
@@ -93,6 +92,8 @@
       width: 100%;
     }
 
+    /* HERO */
+
     .hero {
       max-width: 960px;
       margin: 0 auto;
@@ -103,15 +104,6 @@
       align-items: center;
     }
 
-    .hero-tag {
-      font-size: 0.85rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-      margin-bottom: 0.9rem;
-    }
-
-    /* 🌿 Updated elegant headline */
     .hero-title {
       font-family: "Georgia", "Times New Roman", serif;
       font-size: 2rem;
@@ -144,8 +136,14 @@
       font-size: 0.9rem;
       border: none;
       cursor: pointer;
-      transition: background 0.2s ease-out, transform 0.1s ease-out, box-shadow 0.1s ease-out;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      transition: background 0.2s ease-out, transform 0.1s ease-out, box-shadow 0.1s ease-out;
+    }
+
+    .btn-primary:hover {
+      background: #6d7a50;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
     }
 
     .btn-outline {
@@ -157,6 +155,11 @@
       background: rgba(255, 255, 255, 0.8);
       cursor: pointer;
       transition: background 0.15s ease-out, border-color 0.15s ease-out;
+    }
+
+    .btn-outline:hover {
+      background: #f0ecdf;
+      border-color: var(--accent);
     }
 
     .hero-note {
@@ -217,6 +220,106 @@
       flex-shrink: 0;
     }
 
+    /* MAIN SECTIONS */
+
+    main {
+      max-width: 960px;
+      margin: 0 auto 3rem;
+      padding: 0 1.5rem 3rem;
+    }
+
+    section {
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .section-intro {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      max-width: 560px;
+      margin-bottom: 1.5rem;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .soft-box {
+      background: var(--bg-alt);
+      border-radius: 1.2rem;
+      padding: 1.3rem 1.4rem;
+      border: 1px solid rgba(0,0,0,0.03);
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    .link-arrow {
+      font-size: 0.9rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .link-arrow:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid rgba(0,0,0,0.04);
+      padding: 1.3rem 1.5rem 1.6rem;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 800px) {
+      .hero,
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        padding-inline: 1rem;
+      }
+      .hero {
+        padding-inline: 1rem;
+        padding-top: 2.5rem;
+      }
+      main {
+        padding-inline: 1rem;
+      }
+      .hero-title {
+        font-size: 1.8rem;
+      }
+    }
   </style>
 </head>
 
@@ -232,10 +335,9 @@
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <div>
-      <div class="hero-tag">Natural / Organic</div>
-
       <h1 class="hero-title">
         Karakteristike Potočarke
       </h1>
@@ -246,8 +348,12 @@
       </p>
 
       <div class="hero-cta">
-        <button class="btn-primary">Javi mi se</button>
-        <button class="btn-outline">Saznaj više</button>
+        <button class="btn-primary" onclick="window.location.href='contact.html'">
+          Javi mi se
+        </button>
+        <button class="btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+          Saznaj više
+        </button>
       </div>
 
       <p class="hero-note">* Tekst na sajtu je rad u toku.</p>
@@ -257,4 +363,98 @@
       <img src="potocarkaslika.jpg" alt="Potočarka" class="hero-image" />
 
       <div class="hero-card-title">Naši proizvodi u tri reči</div>
-      <div class="hero-card-main">Prirodno. Tradicionalno.
+      <div class="hero-card-main">Prirodno. Tradicionalno. Sveže.</div>
+
+      <ul class="hero-card-list">
+        <li>
+          <span class="hero-dot"></span>
+          <span>🌿 Ručno pravljeni prirodni proizvodi.</span>
+        </li>
+        <li>
+          <span class="hero-dot"></span>
+          <span>🌿 Sveže ubrano – brzo isporučeno.</span>
+        </li>
+        <li>
+          <span class="hero-dot"></span>
+          <span>🌿 Bilje koje je deo našeg doma kroz generacije.</span>
+        </li>
+      </ul>
+    </aside>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="pill">O Potočarki</div>
+      <h2 class="section-title">Mali rituali za nežniji svakdan</h2>
+      <p class="section-intro">
+        Potočarka je nastala iz želje da se vrati ono što je nekada bilo svakodnevno –
+        domaće bilje, pažljivo ubrano, pripremljeno bez žurbe i deljeno sa bliskim ljudima.
+      </p>
+
+      <div class="two-column">
+        <div>
+          <p>
+            Verujem u jednostavne stvari: šetnju pored vode, rukom ubrane listove, miris
+            koji ostaje na prstima. Sve što nastaje pod imenom Potočarka pravi se u malim
+            serijama, sa pažnjom i poštovanjem prema prirodi.
+          </p>
+        </div>
+        <div class="soft-box">
+          <p><strong>Šta Potočarka donosi:</strong></p>
+          <p>• bilje koje poznajemo generacijama<br />
+             • proizvode koji prate ritam sezone<br />
+             • osećaj mira i usporavanja u jednom trenutku dana</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFERINGS TEASER -->
+    <section id="offerings">
+      <div class="pill">Ponuda</div>
+      <h2 class="section-title">Šta trenutno pravim</h2>
+      <p class="section-intro">
+        Sveža potočarka, tinkture i pažljivo pripremljene suve mešavine – uvek u malim
+        količinama, kada je biljka na svom najboljem nivou.
+      </p>
+      <a href="ponuda.html" class="link-arrow">Pogledaj ponudu →</a>
+    </section>
+
+    <!-- STORY -->
+    <section id="story">
+      <div class="pill">Priča</div>
+      <h2 class="section-title">Kako je nastala Potočarka</h2>
+      <div class="two-column">
+        <div>
+          <p class="section-intro">
+            Sve je počelo od jednostavne navike – da se iz šetnje nikad ne vraćam praznih
+            ruku. Uvek je tu bilo malo bilja, neki list koji me podseti na detinjstvo,
+            miris koji otvori uspomenu.
+          </p>
+        </div>
+        <div class="soft-box">
+          <p>
+            Potočarka je za mene podsetnik da svet ne mora uvek da bude brz, glasan i
+            intenzivan. Može da bude tih, topao i dovoljno spor da se setimo šta nam
+            zaista prija.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Potočarka</div>
+      <div>Ručno, nežno, prirodno.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
