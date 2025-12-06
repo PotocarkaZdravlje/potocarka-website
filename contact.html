@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kontakt – Potocarka</title>
+  <title>Kontakt – Potočarka</title>
 
   <style>
     :root {
@@ -44,11 +44,11 @@
     }
 
     .logo {
-      font-family: "Georgia", "Times New Roman", serif;
-      letter-spacing: 0.08em;
+      font-family: "Georgia", serif;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      font-size: 0.9rem;
-      color: var(--text-soft);
+      font-size: 1.2rem;
+      color: var(--text);
     }
 
     .nav-links {
@@ -108,10 +108,7 @@
       font-size: 1rem;
       color: var(--text-soft);
       max-width: 600px;
-    }
-
-    .contact-card p {
-      margin-bottom: 0.8rem;
+      margin-bottom: 2rem;
     }
 
     .contact-label {
@@ -119,11 +116,59 @@
       color: var(--text);
     }
 
-    .back-link {
-      display: inline-block;
-      margin-top: 2rem;
-      color: var(--accent);
+    /* FORM STYLING */
+    .form-box {
+      background: var(--bg-alt);
+      border-radius: 1.3rem;
+      padding: 1.6rem;
+      border: 1px solid rgba(0,0,0,0.04);
+      max-width: 600px;
+    }
+
+    .field-label {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      margin-bottom: 0.35rem;
+      display: block;
+    }
+
+    .field-input,
+    .field-textarea {
+      width: 100%;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 0.6rem 0.9rem;
+      font-family: inherit;
       font-size: 0.9rem;
+      background: rgba(255,255,255,0.9);
+      margin-bottom: 1rem;
+      outline: none;
+    }
+
+    .field-textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .field-input:focus,
+    .field-textarea:focus {
+      border-color: var(--accent-soft);
+      box-shadow: 0 0 0 1px rgba(124,140,91,0.18);
+    }
+
+    .btn-send {
+      background: var(--accent);
+      color: var(--white);
+      padding: 0.7rem 1.6rem;
+      border: none;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: 0.2s ease-out;
+    }
+
+    .btn-send:hover {
+      background: #6d7a50;
     }
 
     footer {
@@ -131,6 +176,7 @@
       padding: 1.3rem 1.5rem 1.6rem;
       font-size: 0.8rem;
       color: var(--text-soft);
+      margin-top: 3rem;
     }
 
     .footer-inner {
@@ -138,8 +184,8 @@
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
-      gap: 1rem;
       flex-wrap: wrap;
+      gap: 1rem;
     }
   </style>
 </head>
@@ -148,10 +194,10 @@
 
 <header>
   <div class="nav-inner">
-    <div class="logo">Potocarka</div>
+    <div class="logo">Potočarka</div>
     <nav class="nav-links">
-      <a href="index.html#about">O Potocarki</a>
-      <a href="index.html#offerings">Ponuda</a>
+      <a href="index.html#about">O Potočarki</a>
+      <a href="ponuda.html">Ponuda</a>
       <a href="index.html#story">Priča</a>
       <a href="contact.html" class="active">Kontakt</a>
     </nav>
@@ -164,9 +210,23 @@
 
   <div class="contact-card">
     <p><span class="contact-label">Telefon:</span> +381 64 492 8916</p>
-    <p><span class="contact-label">Mejl:</span> 
-      <a href="mailto:potocarkazdravlje@gmail.com">potocarkazdravlje@gmail.com</a>
-    </p>
+    <p><span class="contact-label">Mejl:</span> potocarkazdravlje@gmail.com</p>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div class="form-box">
+    <form action="https://formspree.io/f/mwkgrgvr" method="POST">
+      <label class="field-label">Ime</label>
+      <input class="field-input" type="text" name="name" required />
+
+      <label class="field-label">Email</label>
+      <input class="field-input" type="email" name="email" required />
+
+      <label class="field-label">Poruka</label>
+      <textarea class="field-textarea" name="message" required></textarea>
+
+      <button class="btn-send" type="submit">Pošalji poruku</button>
+    </form>
   </div>
 
   <a href="index.html" class="back-link">← Nazad na početnu</a>
@@ -174,8 +234,8 @@
 
 <footer>
   <div class="footer-inner">
-    <div>© <span id="year"></span> Potocarka</div>
-    <div>Napravljen sa nežnošću.</div>
+    <div>© <span id="year"></span> Potočarka</div>
+    <div>Ručno, nežno, prirodno.</div>
   </div>
 </footer>
 
@@ -185,3 +245,4 @@
 
 </body>
 </html>
+
