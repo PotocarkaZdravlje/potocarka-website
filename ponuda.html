@@ -49,7 +49,7 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--text);
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
     .nav-links {
@@ -98,12 +98,21 @@
       font-family: "Georgia", serif;
       font-size: 1.8rem;
       margin-bottom: 1.4rem;
+      color: var(--text);
     }
 
+    /* 2×2 grid layout */
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
+    }
+
+    /* Mobile: 1 column */
+    @media (max-width: 640px) {
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
     }
 
     .card {
@@ -140,6 +149,7 @@
       margin-top: 2rem;
       color: var(--accent);
       font-size: 0.9rem;
+      text-decoration: none;
     }
 
     footer {
@@ -164,9 +174,9 @@
 
 <header>
   <div class="nav-inner">
-    <div class="logo">Potocarka</div>
+    <div class="logo">Potočarka</div>
     <nav class="nav-links">
-      <a href="index.html#about">O Potocarki</a>
+      <a href="index.html#about">O Potočarki</a>
       <a href="ponuda.html" class="active">Ponuda</a>
       <a href="index.html#story">Priča</a>
       <a href="contact.html">Kontakt</a>
@@ -209,7 +219,7 @@
 
 <footer>
   <div class="footer-inner">
-    <div>© <span id="year"></span> Potocarka</div>
+    <div>© <span id="year"></span> Potočarka</div>
     <div>Ručno, nežno, prirodno.</div>
   </div>
 </footer>
