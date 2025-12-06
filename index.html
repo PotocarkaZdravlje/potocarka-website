@@ -5,6 +5,7 @@
   <title>Potočarka – Natural Living</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Potočarka – a space for gentle, natural living, balance and nourishment." />
+
   <style>
     :root {
       --bg: #f5f3ec;
@@ -110,12 +111,16 @@
       margin-bottom: 0.9rem;
     }
 
+    /* 🌿 Updated elegant headline */
     .hero-title {
       font-family: "Georgia", "Times New Roman", serif;
-      font-size: 2.4rem;
-      line-height: 1.15;
+      font-size: 2rem;
+      font-style: italic;
+      letter-spacing: 0.5px;
+      line-height: 1.2;
       margin-bottom: 1rem;
       color: var(--text);
+      opacity: 0.95;
     }
 
     .hero-subtitle {
@@ -141,12 +146,6 @@
       cursor: pointer;
       transition: background 0.2s ease-out, transform 0.1s ease-out, box-shadow 0.1s ease-out;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-    }
-
-    .btn-primary:hover {
-      background: #6d7a50;
-      transform: translateY(-1px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
     }
 
     .btn-outline {
@@ -218,18 +217,6 @@
       flex-shrink: 0;
     }
 
-    main {
-      max-width: 960px;
-      margin: 0 auto 3rem;
-      padding: 0 1.5rem;
-    }
-
-    section {
-      padding: 2.5rem 0;
-      border-top: 1px solid rgba(0, 0, 0, 0.03);
-    }
-
-    /* Other sections remain unchanged */
   </style>
 </head>
 
@@ -248,49 +235,26 @@
   <section class="hero">
     <div>
       <div class="hero-tag">Natural / Organic</div>
+
       <h1 class="hero-title">
         Karakteristike Potočarke
       </h1>
+
       <p class="hero-subtitle">
         Potočarka je mali, miran prostor za prirodniji život – za trenutke kada se vraćaš sebi,
         usporavaš, dišeš dublje i biraš ono što ti zaista prija.
       </p>
 
       <div class="hero-cta">
-        <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-          Javi mi se
-        </button>
-        <button class="btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
-          Saznaj više
-        </button>
+        <button class="btn-primary">Javi mi se</button>
+        <button class="btn-outline">Saznaj više</button>
       </div>
 
       <p class="hero-note">* Tekst na sajtu je rad u toku.</p>
     </div>
 
     <aside class="hero-card">
-      <!-- FOTO: main hero image -->
       <img src="potocarkaslika.jpg" alt="Potočarka" class="hero-image" />
 
       <div class="hero-card-title">Naši proizvodi u tri reči</div>
-      <div class="hero-card-main">Prirodno. Tradicionalno. Sveže.</div>
-
-      <ul class="hero-card-list">
-        <li>
-          <span class="hero-dot"></span>
-          <span>🌿 Ručno pravljeni prirodni proizvodi.</span>
-        </li>
-        <li>
-          <span class="hero-dot"></span>
-          <span>🌿 Sveže ubrano – brzo isporučeno.</span>
-        </li>
-        <li>
-          <span class="hero-dot"></span>
-          <span>🌿 Bilje koje je deo našeg doma kroz generacije.</span>
-        </li>
-      </ul>
-    </aside>
-  </section>
-
-</body>
-</html>
+      <div class="hero-card-main">Prirodno. Tradicionalno.
