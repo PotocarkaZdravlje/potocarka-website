@@ -68,8 +68,10 @@
     .nav-links a::after {
       content: "";
       position: absolute;
-      left: 0; bottom: 0;
-      width: 0%; height: 1px;
+      left: 0; 
+      bottom: 0;
+      width: 0%; 
+      height: 1px;
       background: var(--accent);
       transition: width 0.2s ease-out;
     }
@@ -101,7 +103,7 @@
       color: var(--text);
     }
 
-    /* 2×2 grid layout */
+    /* 2x2 grid layout */
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -124,20 +126,17 @@
       color: var(--text-soft);
     }
 
-    
-.card-img{
-  width: 100%;
-  height: 180px;     /* može 160–220, kako ti lepše */
-  object-fit: cover; /* kropuje da popuni */
-  border-radius: 1rem;
-  margin-bottom: 1rem;
-  display: block;
-}
+    /* IMAGE IN CARD */
+    .card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+      display: block;
+      background: #fff;
+    }
 
-.card-body {
-  display: flex;
-  flex-direction: column;
-}
     .card-title {
       font-size: 1.1rem;
       margin-bottom: 0.4rem;
@@ -190,10 +189,9 @@
   <div class="nav-inner">
     <div class="logo">Potočarka</div>
     <nav class="nav-links">
-      
       <a href="index.html">Početna</a>
       <a href="ponuda.html" class="active">Ponuda</a>
-      <a href="opotocarki.html" class="active">O Potočarki</a>
+      <a href="opotocarki.html">O Potočarki</a>
       <a href="contact.html">Kontakt</a>
     </nav>
   </div>
@@ -206,25 +204,26 @@
   <div class="grid-3">
 
     <div class="card">
+      <img class="card-img" src="sveza.jpg" alt="Sveža potočarka" />
       <div class="card-title">1kg sveže potočarke</div>
       <p class="price">1000 din</p>
     </div>
 
     <div class="card">
-  <img class="card-img" src="tinktura.jpg" alt="Tintura od potočarke" />
-  <div class="card-body">
-    <div class="card-title">Tintura od potočarke (50ml)</div>
-    <p class="price">1000 din</p>
-  </div>
-</div>
+      <img class="card-img" src="tinktura.jpg" alt="Tintura od potočarke" />
+      <div class="card-title">Tintura od potočarke (50ml)</div>
+      <p class="price">1000 din</p>
+    </div>
 
     <div class="card">
+      <img class="card-img" src="suva.jpg" alt="Suva potočarka" />
       <div class="card-title">1kg suve potočarke</div>
       <p class="price">15 000 din</p>
       <p class="out">Trenutno nema na stanju</p>
     </div>
 
     <div class="card">
+      <img class="card-img" src="prah.jpg" alt="Potočarka u prahu" />
       <div class="card-title">Suva potočarka u prahu (50g)</div>
       <p class="price">1000 din</p>
       <p class="out">Trenutno nema na stanju</p>
