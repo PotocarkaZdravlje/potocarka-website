@@ -388,3 +388,30 @@ footer {
   }
 }
 
+/* CONTACT PAGE STRUCTURE */
+
+.contact-hero {
+  margin-bottom: 1.4rem;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* PHONE */
+@media (max-width: 640px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .contact-card,
+  .form-box {
+    max-width: 100%;
+  }
+}
+
+
