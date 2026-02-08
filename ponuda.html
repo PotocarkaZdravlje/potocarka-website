@@ -74,9 +74,9 @@
     .nav-links a::after {
       content: "";
       position: absolute;
-      left: 0; 
+      left: 0;
       bottom: 0;
-      width: 0%; 
+      width: 0%;
       height: 1px;
       background: var(--accent);
       transition: width 0.2s ease-out;
@@ -109,14 +109,14 @@
       color: var(--text);
     }
 
-    /* 2x2 grid layout */
+    /* GRID */
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
     }
 
-    /* Mobile: 1 column */
+    /* Mobile */
     @media (max-width: 640px) {
       main { padding-inline: 1rem; }
       .grid-3 { grid-template-columns: 1fr; }
@@ -134,7 +134,7 @@
       color: var(--text-soft);
     }
 
-    /* IMAGE IN CARD */
+    /* REAL IMAGE */
     .card-img {
       width: 100%;
       height: 200px;
@@ -144,9 +144,10 @@
       display: block;
       background: #ffffff;
       padding: 0.75rem;
+      border: 1px solid rgba(0,0,0,0.03);
     }
 
-    /* PLACEHOLDER for missing images */
+    /* PLACEHOLDER */
     .img-placeholder {
       width: 100%;
       height: 200px;
@@ -160,6 +161,7 @@
       color: #7a725f;
       font-size: 0.85rem;
       padding: 0.75rem;
+      text-align: center;
     }
 
     .card-title {
@@ -229,7 +231,7 @@
   <div class="grid-3">
 
     <div class="card">
-      <img class="card-img" src="sveza.jpg" alt="Sveža potočarka" />
+      <div class="img-placeholder">Slika uskoro</div>
       <div class="card-title">1kg sveže potočarke</div>
       <p class="price">1000 din</p>
     </div>
