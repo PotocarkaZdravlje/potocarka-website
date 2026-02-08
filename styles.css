@@ -333,4 +333,58 @@ footer {
     gap: 0.4rem;
   }
 }
+/* ========================= */
+/* PAGE-SPECIFIC MOBILE FIXES */
+/* ========================= */
+
+/* PONUDA: slike i kartice */
+@media (max-width: 640px) {
+  body.page-ponuda .grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.page-ponuda .card-media {
+    height: 220px;              /* veći okvir da ne “zgnječi” sliku */
+    padding: 0.7rem;
+  }
+
+  body.page-ponuda .card-img {
+    object-fit: contain;        /* logo/tinktura ostaje “lepo” */
+  }
+
+  /* naslov + cena da ne pucaju ružno */
+  body.page-ponuda .card-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  body.page-ponuda .price {
+    font-size: 1rem;
+  }
+}
+
+/* KONTAKT: kartica + forma */
+@media (max-width: 640px) {
+  body.page-contact main {
+    padding: 1.2rem 1rem 2rem;
+  }
+
+  body.page-contact .contact-card,
+  body.page-contact .form-box {
+    max-width: 100%;
+    padding: 1.15rem;
+  }
+
+  body.page-contact .field-input,
+  body.page-contact .field-textarea {
+    font-size: 0.95rem;         /* da se lepše kuca na telefonu */
+  }
+
+  body.page-contact .btn-send {
+    width: 100%;
+    text-align: center;
+    padding: 0.85rem 1rem;
+  }
+}
 
