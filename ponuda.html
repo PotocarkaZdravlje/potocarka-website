@@ -22,16 +22,18 @@
       font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
+    /* HEADER (usklađeno sa početnom) */
     header {
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(245, 243, 236, 0.9);
+      background: rgba(245, 243, 236, 0.92);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid rgba(0, 0, 0, 0.03);
     }
@@ -42,8 +44,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.75rem 1.5rem;
       gap: 1rem;
+      padding: 0.65rem 1.5rem;
     }
 
     .logo {
@@ -54,11 +56,13 @@
       color: var(--text);
       opacity: 0.95;
       white-space: nowrap;
+      flex: 0 0 auto;
     }
 
     .nav-links {
       display: flex;
-      gap: 1.25rem;
+      align-items: center;
+      gap: 1.1rem;
       font-size: 0.9rem;
       flex-wrap: wrap;
       justify-content: flex-end;
@@ -74,10 +78,8 @@
     .nav-links a::after {
       content: "";
       position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0%;
-      height: 1px;
+      left: 0; bottom: 0;
+      width: 0%; height: 1px;
       background: var(--accent);
       transition: width 0.2s ease-out;
     }
@@ -87,52 +89,43 @@
       width: 100%;
     }
 
+    /* MAIN */
     main {
       max-width: 960px;
       margin: 0 auto;
-      padding: 3rem 1.5rem 2rem;
+      padding: 1.9rem 1.5rem 2.2rem; /* manje praznog prostora */
     }
 
     .pill {
       display: inline-block;
-      font-size: 0.75rem;
-      letter-spacing: 0.16em;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--text-soft);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
     }
 
     .section-title {
       font-family: "Georgia", serif;
-      font-size: 1.8rem;
-      margin-bottom: 1.4rem;
+      font-size: 1.6rem;
+      margin-bottom: 1.15rem;
       color: var(--text);
     }
 
-    /* GRID: 2x2 */
+    /* GRID: 2x2 desktop */
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.35rem;
       align-items: stretch;
-    }
-
-    /* Mobile */
-    @media (max-width: 640px) {
-      main { padding-inline: 1rem; }
-      .grid-3 { grid-template-columns: 1fr; }
-      .nav-inner { padding-inline: 1rem; align-items: flex-start; }
-      .logo { font-size: 1.15rem; }
-      .nav-links { gap: 0.75rem; font-size: 0.85rem; }
     }
 
     /* CARD */
     .card {
       background: var(--bg-alt);
       border-radius: 1.2rem;
-      padding: 1.2rem 1.2rem 1.25rem;
+      padding: 1.15rem 1.15rem 1.25rem;
       border: 1px solid rgba(0,0,0,0.03);
-      font-size: 0.95rem;
       color: var(--text-soft);
       display: flex;
       flex-direction: column;
@@ -145,7 +138,7 @@
       box-shadow: 0 14px 30px rgba(0,0,0,0.08);
     }
 
-    /* PRODUCT MEDIA FRAME */
+    /* MEDIA FRAME */
     .card-media {
       width: 100%;
       height: 210px;
@@ -156,7 +149,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 0.95rem;
+      margin-bottom: 0.9rem;
       overflow: hidden;
     }
 
@@ -165,6 +158,7 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
+      object-position: center;
       display: block;
     }
 
@@ -184,26 +178,26 @@
       padding: 0.6rem;
     }
 
-    /* TITLE + PRICE ROW */
+    /* TITLE + PRICE */
     .card-row {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      gap: 1rem;
-      margin-top: 0.1rem;
+      gap: 0.9rem;
+      margin-top: 0.05rem;
     }
 
     .card-title {
-      font-size: 1.05rem;
+      font-size: 1.03rem;
       color: var(--text);
       font-weight: 600;
       line-height: 1.25;
     }
 
     .price {
-      font-size: 1.05rem;
+      font-size: 1.03rem;
       color: var(--accent);
-      font-weight: 700;
+      font-weight: 750;
       white-space: nowrap;
       flex: 0 0 auto;
     }
@@ -211,23 +205,22 @@
     .out {
       margin-top: 0.55rem;
       color: #b34a3c;
-      font-weight: 600;
+      font-weight: 650;
       font-size: 0.9rem;
     }
 
     .back-link {
       display: inline-block;
-      margin-top: 2rem;
+      margin-top: 1.8rem;
       color: var(--accent);
       font-size: 0.9rem;
-      text-decoration: none;
     }
 
     .back-link:hover { text-decoration: underline; }
 
     footer {
       border-top: 1px solid rgba(0,0,0,0.04);
-      padding: 1.3rem 1.5rem 1.6rem;
+      padding: 1.1rem 1.5rem 1.3rem;
       font-size: 0.8rem;
       color: var(--text-soft);
     }
@@ -240,11 +233,29 @@
       flex-wrap: wrap;
       gap: 1rem;
     }
+
+    /* TABLET */
+    @media (max-width: 800px) {
+      main { padding-top: 1.6rem; }
+      .grid-3 { grid-template-columns: 1fr; }
+    }
+
+    /* PHONE */
+    @media (max-width: 640px) {
+      .nav-inner { padding: 0.6rem 1rem; align-items: flex-start; }
+      .logo { font-size: 1.05rem; }
+      .nav-links { gap: 0.7rem; font-size: 0.82rem; }
+
+      main { padding: 1.4rem 1rem 2rem; }
+      .section-title { font-size: 1.45rem; margin-bottom: 0.95rem; }
+
+      .card { padding: 1.05rem; }
+      .card-media { height: 195px; }
+    }
   </style>
 </head>
 
 <body>
-
 <header>
   <div class="nav-inner">
     <div class="logo">Potočarka</div>
@@ -275,10 +286,10 @@
 
     <div class="card">
       <div class="card-media">
-        <img class="card-img" src="tinktura.jpg" alt="Tintura od potočarke" />
+        <img class="card-img" src="tinktura.jpg" alt="Tinktura od potočarke" />
       </div>
       <div class="card-row">
-        <div class="card-title">Tintura od potočarke (50ml)</div>
+        <div class="card-title">Tinktura od potočarke (50ml)</div>
         <div class="price">1000 din</div>
       </div>
     </div>
@@ -320,6 +331,5 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
