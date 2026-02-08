@@ -19,17 +19,20 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
+    a { color: inherit; text-decoration: none; }
+
+    /* HEADER (usklađen sa početnom) */
     header {
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(245, 243, 236, 0.9);
+      background: rgba(245, 243, 236, 0.92);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid rgba(0,0,0,0.03);
     }
@@ -40,31 +43,35 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.75rem 1.5rem;
+      gap: 1rem;
+      padding: 0.65rem 1.5rem;
     }
 
     .logo {
-  font-family: "Georgia", serif;
-  font-size: 1.35rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text);
-  opacity: 0.95;
-  white-space: nowrap;
-}
-
+      font-family: "Georgia", serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.95;
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
 
     .nav-links {
       display: flex;
-      gap: 1.25rem;
+      align-items: center;
+      gap: 1.1rem;
       font-size: 0.9rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      text-align: right;
     }
 
     .nav-links a {
-      text-decoration: none;
-      color: var(--text);
       position: relative;
       padding-bottom: 0.1rem;
+      white-space: nowrap;
     }
 
     .nav-links a::after {
@@ -81,51 +88,67 @@
       width: 100%;
     }
 
+    /* MAIN (tight spacing) */
     main {
       max-width: 960px;
       margin: 0 auto;
-      padding: 3rem 1.5rem 2rem;
+      padding: 1.8rem 1.5rem 2.2rem;
     }
 
     .pill {
       display: inline-block;
-      font-size: 0.75rem;
-      letter-spacing: 0.16em;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--text-soft);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.2rem;
     }
 
     .section-title {
-      font-family: "Georgia", serif;
-      font-size: 1.8rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .contact-card {
-      background: linear-gradient(135deg, #f7f3ea, #e9e2d4);
-      border-radius: 1.5rem;
-      padding: 1.8rem 1.6rem;
-      border: 1px solid rgba(0,0,0,0.04);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.06);
-      font-size: 1rem;
-      color: var(--text-soft);
-      max-width: 600px;
-      margin-bottom: 2rem;
-    }
-
-    .contact-label {
-      font-weight: 600;
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 1.45rem;
+      margin-bottom: 0.7rem;
       color: var(--text);
     }
 
-    /* FORM STYLING */
+    /* LAYOUT: two blocks aligned */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      align-items: start;
+      margin-top: 0.6rem;
+    }
+
+    /* CONTACT CARD */
+    .contact-card {
+      background: linear-gradient(135deg, #f7f3ea, #e9e2d4);
+      border-radius: 1.5rem;
+      padding: 1.25rem 1.2rem;
+      border: 1px solid rgba(0,0,0,0.04);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.055);
+      color: var(--text-soft);
+    }
+
+    .contact-row {
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-row:last-child { margin-bottom: 0; }
+
+    .contact-label {
+      font-weight: 700;
+      color: var(--text);
+      margin-right: 0.35rem;
+    }
+
+    /* FORM BOX */
     .form-box {
       background: var(--bg-alt);
       border-radius: 1.3rem;
-      padding: 1.6rem;
+      padding: 1.25rem 1.2rem;
       border: 1px solid rgba(0,0,0,0.04);
-      max-width: 600px;
     }
 
     .field-label {
@@ -143,13 +166,13 @@
       padding: 0.6rem 0.9rem;
       font-family: inherit;
       font-size: 0.9rem;
-      background: rgba(255,255,255,0.9);
-      margin-bottom: 1rem;
+      background: rgba(255,255,255,0.92);
+      margin-bottom: 0.95rem;
       outline: none;
     }
 
     .field-textarea {
-      min-height: 110px;
+      min-height: 120px;
       resize: vertical;
     }
 
@@ -162,24 +185,33 @@
     .btn-send {
       background: var(--accent);
       color: var(--white);
-      padding: 0.7rem 1.6rem;
+      padding: 0.72rem 1.6rem;
       border: none;
       border-radius: 999px;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       cursor: pointer;
       transition: 0.2s ease-out;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
     }
 
-    .btn-send:hover {
-      background: #6d7a50;
+    .btn-send:hover { background: #6d7a50; transform: translateY(-1px); }
+
+    /* BACK LINK */
+    .back-link {
+      display: inline-block;
+      margin-top: 1.6rem;
+      color: var(--accent);
+      font-size: 0.9rem;
     }
 
+    .back-link:hover { text-decoration: underline; }
+
+    /* FOOTER */
     footer {
       border-top: 1px solid rgba(0,0,0,0.04);
-      padding: 1.3rem 1.5rem 1.6rem;
+      padding: 1.1rem 1.5rem 1.3rem;
       font-size: 0.8rem;
       color: var(--text-soft);
-      margin-top: 3rem;
     }
 
     .footer-inner {
@@ -187,8 +219,24 @@
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
       gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* TABLET / PHONE */
+    @media (max-width: 900px) {
+      .contact-wrap { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner { padding: 0.6rem 1rem; align-items: flex-start; }
+      .logo { font-size: 1.05rem; }
+      .nav-links { gap: 0.7rem; font-size: 0.82rem; }
+
+      main { padding: 1.35rem 1rem 2rem; }
+
+      .btn-send { width: 100%; } /* lepše na telefonu */
+      footer { padding-inline: 1rem; }
     }
   </style>
 </head>
@@ -200,7 +248,7 @@
     <div class="logo">Potočarka</div>
     <nav class="nav-links">
       <a href="index.html">Početna</a>
-      <a href="ponuda.html">Ponuda</a> 
+      <a href="ponuda.html">Ponuda</a>
       <a href="opotocarki.html">O Potočarki</a>
       <a href="contact.html" class="active">Kontakt</a>
     </nav>
@@ -209,30 +257,37 @@
 
 <main>
   <div class="pill">Kontakt</div>
-  <h1 class="section-title">Kontakt informacije</h1>
+  <h1 class="section-title">Kontakt</h1>
 
-  <div class="contact-card">
-    <p><span class="contact-label">Telefon:</span> +381 64 492 8916</p>
-    <p><span class="contact-label">Mejl:</span> potocarkazdravlje@gmail.com</p>
-  </div>
+  <div class="contact-wrap">
+    <div class="contact-card">
+      <div class="contact-row">
+        <span class="contact-label">Telefon:</span> +381 64 492 8916
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Mejl:</span> potocarkazdravlje@gmail.com
+      </div>
+      <div class="contact-row" style="opacity:0.9; font-size:0.9rem;">
+        Pišite nam poruku preko forme — odgovaramo čim stignemo.
+      </div>
+    </div>
 
-  <!-- CONTACT FORM -->
-  <div class="form-box">
-    <form action="https://formspree.io/f/mnjdqank" method="POST">
-  <label class="field-label">Ime</label>
-  <input class="field-input" type="text" name="name" required />
+    <div class="form-box">
+      <form action="https://formspree.io/f/mnjdqank" method="POST">
+        <label class="field-label">Ime</label>
+        <input class="field-input" type="text" name="name" required />
 
-  <label class="field-label">Vaš email</label>
-  <input class="field-input" type="email" name="email" required />
+        <label class="field-label">Vaš email</label>
+        <input class="field-input" type="email" name="email" required />
 
-  <label class="field-label">Poruka</label>
-  <textarea class="field-textarea" name="message" required></textarea>
+        <label class="field-label">Poruka</label>
+        <textarea class="field-textarea" name="message" required></textarea>
 
-  <input type="hidden" name="_subject" value="Poruka sa sajta Potočarka" />
+        <input type="hidden" name="_subject" value="Poruka sa sajta Potočarka" />
 
-  <button class="btn-send" type="submit">Pošalji poruku</button>
-</form>
-
+        <button class="btn-send" type="submit">Pošalji poruku</button>
+      </form>
+    </div>
   </div>
 
   <a href="index.html" class="back-link">← Nazad na početnu</a>
@@ -251,4 +306,3 @@
 
 </body>
 </html>
-
