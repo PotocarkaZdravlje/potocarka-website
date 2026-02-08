@@ -50,22 +50,22 @@
     }
 
     .logo {
-  font-family: "Georgia", serif;
-  font-size: 1.35rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text);
-  opacity: 0.95;
-  white-space: nowrap;
-}
-
+      font-family: "Georgia", serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.95;
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
 
     .nav-links {
       display: flex;
       align-items: center;
       gap: 1.1rem;
       font-size: 0.9rem;
-      flex-wrap: wrap; /* bitno za telefon */
+      flex-wrap: wrap; /* desktop može, mobile ćemo override */
       justify-content: flex-end;
       text-align: right;
     }
@@ -73,7 +73,7 @@
     .nav-links a {
       position: relative;
       padding-bottom: 0.1rem;
-      white-space: nowrap; /* da linkovi ne pucaju u 2 reda unutar samog linka */
+      white-space: nowrap;
     }
 
     .nav-links a::after {
@@ -95,7 +95,7 @@
     .hero {
       max-width: 960px;
       margin: 0 auto;
-      padding: 1.8rem 1.5rem 1.8rem; /* manji prostor desktop */
+      padding: 1.8rem 1.5rem 1.8rem;
       display: grid;
       grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
       gap: 1.8rem;
@@ -104,11 +104,11 @@
 
     .hero-title {
       font-family: "Georgia", "Times New Roman", serif;
-      font-size: 1.55rem; /* manji i elegantniji */
+      font-size: 1.55rem;
       font-style: italic;
       letter-spacing: 0.3px;
       line-height: 1.25;
-      margin-bottom: 0.35rem; /* manje praznine ispod naslova */
+      margin-bottom: 0.35rem;
       color: var(--text);
       opacity: 0.95;
     }
@@ -116,7 +116,7 @@
     .hero-subtitle {
       font-size: 0.97rem;
       color: var(--text-soft);
-      margin-bottom: 0.6rem; /* zategnuto */
+      margin-bottom: 0.6rem;
       max-width: 560px;
     }
 
@@ -178,7 +178,7 @@
     }
 
     section {
-      padding: 1.5rem 0; /* manje praznine dole */
+      padding: 1.5rem 0;
       border-top: 1px solid rgba(0, 0, 0, 0.03);
     }
 
@@ -239,21 +239,44 @@
       }
     }
 
+    /* ✅ MOBILE HEADER FIX: logo gore, meni ispod u JEDNOM redu + scroll */
     @media (max-width: 640px) {
       .nav-inner {
         padding: 0.6rem 1rem;
+        flex-direction: column;
         align-items: flex-start;
+        gap: 0.45rem;
       }
 
       .logo {
-        font-size: 1.05rem;
+        font-size: 1.08rem;
         margin-top: 0.05rem;
       }
 
       .nav-links {
+        width: 100%;
         font-size: 0.82rem;
-        gap: 0.7rem;
-        justify-content: flex-end;
+
+        flex-wrap: nowrap;          /* KLJUČNO: ne prelamaj */
+        overflow-x: auto;           /* ako je usko, skrol */
+        -webkit-overflow-scrolling: touch;
+
+        gap: 0.75rem;
+        justify-content: flex-start;
+        padding-bottom: 0.25rem;
+      }
+
+      /* sakrij scrollbar (opciono ali lepše) */
+      .nav-links::-webkit-scrollbar { display: none; }
+      .nav-links { scrollbar-width: none; }
+
+      /* mali “premium” touch za tap */
+      .nav-links a {
+        padding: 0.35rem 0.55rem;
+        border-radius: 999px;
+      }
+      .nav-links a:active {
+        background: rgba(124, 140, 91, 0.12);
       }
 
       .hero {
@@ -262,7 +285,7 @@
       }
 
       .hero-title {
-        font-size: 1.35rem; /* još manje na telefonu */
+        font-size: 1.35rem;
       }
 
       main { padding-inline: 1rem; }
@@ -287,7 +310,6 @@
   <!-- HERO -->
   <section class="hero">
     <div>
-
       <p class="hero-subtitle">
         Kod nas možete pronaći potočarku i proizvode od potočarke, dostupne uz brzu dostavu.
         Ubrana u čistim planinskim predelima, u bistrim potocima na obroncima Stare planine,
@@ -350,5 +372,3 @@
   </script>
 </body>
 </html>
-
-
