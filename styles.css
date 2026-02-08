@@ -259,3 +259,78 @@ footer {
   main { padding-inline: 1rem; }
   footer { padding-inline: 1rem; }
 }
+/* ========================= */
+/* GLOBAL MOBILE FIX */
+/* ========================= */
+
+@media (max-width: 640px) {
+
+  /* NAVIGATION */
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+    font-size: 0.82rem;
+  }
+
+  /* HERO */
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 1.2rem 1rem;
+    gap: 1.2rem;
+  }
+
+  .hero-card {
+    order: -1; /* slika ide iznad teksta */
+  }
+
+  /* MAIN spacing */
+  main {
+    padding: 0 1rem 2rem;
+  }
+
+  section {
+    padding: 1.2rem 0;
+  }
+
+  /* GRID (ponuda stranica) */
+  .grid-3 {
+    grid-template-columns: 1fr !important;
+    gap: 1.1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .card-media {
+    height: 180px;
+  }
+
+  /* CONTACT PAGE */
+  .contact-card,
+  .form-box {
+    padding: 1.2rem;
+  }
+
+  /* ABOUT PAGE */
+  .hero-title {
+    font-size: 1.3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.92rem;
+  }
+
+  /* FOOTER */
+  .footer-inner {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+}
+
