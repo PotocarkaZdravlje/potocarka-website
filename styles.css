@@ -270,3 +270,116 @@ footer {
   .nav-links {
     width: 100%;
     font-size: 0.82rem;
+
+    /* ========================= */
+/* CONTACT PAGE – STYLES     */
+/* ========================= */
+
+body.page-contact main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.2rem 1.5rem 2rem;
+}
+
+body.page-contact .contact-hero {
+  margin-bottom: 1.4rem;
+}
+
+body.page-contact .contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Leva kartica */
+body.page-contact .contact-card {
+  background: linear-gradient(135deg, #f7f3ea, #e9e2d4);
+  border-radius: 1.5rem;
+  padding: 1.8rem 1.6rem;
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.06);
+  font-size: 1rem;
+  color: var(--text-soft);
+}
+
+/* “Telefon:”, “Mejl:” bold */
+body.page-contact .contact-label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Forma */
+body.page-contact .form-box {
+  background: var(--bg-alt);
+  border-radius: 1.3rem;
+  padding: 1.6rem;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+body.page-contact .field-label {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+body.page-contact .field-input,
+body.page-contact .field-textarea {
+  width: 100%;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 0.65rem 0.9rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: rgba(255,255,255,0.9);
+  margin-bottom: 1rem;
+  outline: none;
+}
+
+body.page-contact .field-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+body.page-contact .field-input:focus,
+body.page-contact .field-textarea:focus {
+  border-color: var(--accent-soft);
+  box-shadow: 0 0 0 1px rgba(124,140,91,0.18);
+}
+
+body.page-contact .btn-send {
+  background: var(--accent);
+  color: var(--white);
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+}
+
+body.page-contact .btn-send:hover {
+  background: #6d7a50;
+}
+
+/* Nazad link */
+body.page-contact .back-link {
+  display: inline-block;
+  margin-top: 1.2rem;
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+body.page-contact .back-link:hover { text-decoration: underline; }
+
+/* Mobile */
+@media (max-width: 640px) {
+  body.page-contact main {
+    padding: 1.4rem 1rem 2rem;
+  }
+  body.page-contact .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+}
+
