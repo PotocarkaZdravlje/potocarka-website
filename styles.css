@@ -48,6 +48,7 @@ header {
   color: var(--text);
   opacity: 0.95;
   white-space: nowrap;
+  flex: 0 0 auto;
 }
 
 .nav-links {
@@ -93,22 +94,65 @@ header {
   align-items: center;
 }
 
+/* ✅ NEDOSTAJALO: .hero-text (da tekst ima lep raspored) */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
 .hero-title {
   font-family: "Georgia", "Times New Roman", serif;
   font-size: 1.55rem;
   font-style: italic;
   letter-spacing: 0.3px;
   line-height: 1.25;
-  margin-bottom: 0.35rem;
   color: var(--text);
   opacity: 0.95;
 }
 
-.hero-subtitle {
-  font-size: 0.97rem;
+/* ✅ NEDOSTAJALO: lista vrednosti */
+.hero-values {
+  list-style: none;
   color: var(--text-soft);
-  margin-bottom: 0.6rem;
-  max-width: 560px;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-left: 0;
+}
+
+.hero-values li {
+  display: flex;
+  gap: 0.55rem;
+}
+
+.hero-values li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  margin-top: 0.55rem;
+  flex: 0 0 6px;
+}
+
+/* ✅ NEDOSTAJALO: CTA dugme */
+.hero-cta {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.1rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 0.92rem;
+  transition: 0.2s ease-out;
+}
+
+.hero-cta:hover {
+  background: #6d7a50;
 }
 
 .hero-card {
@@ -138,27 +182,6 @@ header {
   font-family: "Georgia", "Times New Roman", serif;
   font-size: 1.03rem;
   color: var(--text);
-}
-
-.hero-card-list {
-  list-style: none;
-  font-size: 0.85rem;
-  color: var(--text-soft);
-}
-
-.hero-card-list li {
-  display: flex;
-  gap: 0.4rem;
-  margin-bottom: 0.3rem;
-}
-
-.hero-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  margin-top: 0.4rem;
-  background: var(--accent-soft);
-  flex-shrink: 0;
 }
 
 /* MAIN */
@@ -230,385 +253,20 @@ footer {
   }
 }
 
+/* ✅ MOBILE HEADER FIX: logo gore, meni ispod u JEDNOM redu + scroll */
 @media (max-width: 640px) {
   .nav-inner {
     padding: 0.6rem 1rem;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 0.45rem;
   }
 
   .logo {
-    font-size: 1.05rem;
+    font-size: 1.08rem;
     margin-top: 0.05rem;
   }
 
   .nav-links {
-    font-size: 0.82rem;
-    gap: 0.7rem;
-    justify-content: flex-end;
-  }
-
-  .hero {
-    padding: 1.35rem 1rem 1.35rem;
-    gap: 1.35rem;
-  }
-
-  .hero-title {
-    font-size: 1.35rem;
-  }
-
-  main { padding-inline: 1rem; }
-  footer { padding-inline: 1rem; }
-}
-/* ========================= */
-/* GLOBAL MOBILE FIX */
-/* ========================= */
-
-@media (max-width: 640px) {
-
-  /* NAVIGATION */
-  .nav-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
-  }
-
-  .nav-links {
     width: 100%;
-    justify-content: space-between;
     font-size: 0.82rem;
-  }
-
-  /* HERO */
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 1.2rem 1rem;
-    gap: 1.2rem;
-  }
-
-  .hero-card {
-    order: -1; /* slika ide iznad teksta */
-  }
-
-  /* MAIN spacing */
-  main {
-    padding: 0 1rem 2rem;
-  }
-
-  section {
-    padding: 1.2rem 0;
-  }
-
-  /* GRID (ponuda stranica) */
-  .grid-3 {
-    grid-template-columns: 1fr !important;
-    gap: 1.1rem;
-  }
-
-  .card {
-    padding: 1rem;
-  }
-
-  .card-media {
-    height: 180px;
-  }
-
-  /* CONTACT PAGE */
-  .contact-card,
-  .form-box {
-    padding: 1.2rem;
-  }
-
-  /* ABOUT PAGE */
-  .hero-title {
-    font-size: 1.3rem;
-  }
-
-  .hero-subtitle {
-    font-size: 0.92rem;
-  }
-
-  /* FOOTER */
-  .footer-inner {
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-}
-/* ========================= */
-/* PAGE-SPECIFIC MOBILE FIXES */
-/* ========================= */
-
-/* PONUDA: slike i kartice */
-@media (max-width: 640px) {
-  body.page-ponuda .grid-3 {
-    grid-template-columns: 1fr !important;
-  }
-
-  body.page-ponuda .card-media {
-    height: 220px;              /* veći okvir da ne “zgnječi” sliku */
-    padding: 0.7rem;
-  }
-
-  body.page-ponuda .card-img {
-    object-fit: contain;        /* logo/tinktura ostaje “lepo” */
-  }
-
-  /* naslov + cena da ne pucaju ružno */
-  body.page-ponuda .card-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-  }
-
-  body.page-ponuda .price {
-    font-size: 1rem;
-  }
-}
-
-/* KONTAKT: kartica + forma */
-@media (max-width: 640px) {
-  body.page-contact main {
-    padding: 1.2rem 1rem 2rem;
-  }
-
-  body.page-contact .contact-card,
-  body.page-contact .form-box {
-    max-width: 100%;
-    padding: 1.15rem;
-  }
-
-  body.page-contact .field-input,
-  body.page-contact .field-textarea {
-    font-size: 0.95rem;         /* da se lepše kuca na telefonu */
-  }
-
-  body.page-contact .btn-send {
-    width: 100%;
-    text-align: center;
-    padding: 0.85rem 1rem;
-  }
-}
-
-/* CONTACT PAGE STRUCTURE */
-
-.contact-hero {
-  margin-bottom: 1.4rem;
-}
-
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 2rem;
-  align-items: start;
-}
-
-/* PHONE */
-@media (max-width: 640px) {
-  .contact-layout {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
-  }
-
-  .contact-card,
-  .form-box {
-    max-width: 100%;
-  }
-}
-/* ========================= */
-/* CONTACT PAGE – DESIGN FIX */
-/* ========================= */
-
-.contact-card {
-  background: linear-gradient(135deg, #f7f3ea, #e9e2d4);
-  border-radius: 1.5rem;
-  padding: 1.8rem 1.6rem;
-  border: 1px solid rgba(0,0,0,0.04);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.06);
-  font-size: 1rem;
-  color: var(--text-soft);
-  max-width: 600px;
-}
-
-.contact-label {
-  font-weight: 600;
-  color: var(--text);
-}
-
-/* FORM BOX */
-
-.form-box {
-  background: var(--bg-alt);
-  border-radius: 1.3rem;
-  padding: 1.6rem;
-  border: 1px solid rgba(0,0,0,0.04);
-  max-width: 600px;
-}
-
-/* INPUT FIELDS */
-
-.field-label {
-  font-size: 0.85rem;
-  color: var(--text-soft);
-  margin-bottom: 0.35rem;
-  display: block;
-}
-
-.field-input,
-.field-textarea {
-  width: 100%;
-  border-radius: 0.9rem;
-  border: 1px solid rgba(0,0,0,0.08);
-  padding: 0.65rem 0.9rem;
-  font-family: inherit;
-  font-size: 0.95rem;
-  background: rgba(255,255,255,0.9);
-  margin-bottom: 1rem;
-  outline: none;
-}
-
-.field-textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.field-input:focus,
-.field-textarea:focus {
-  border-color: var(--accent-soft);
-  box-shadow: 0 0 0 1px rgba(124,140,91,0.18);
-}
-
-/* SEND BUTTON */
-
-.btn-send {
-  background: var(--accent);
-  color: var(--white);
-  padding: 0.8rem 1.6rem;
-  border: none;
-  border-radius: 999px;
-  font-size: 0.92rem;
-  cursor: pointer;
-  transition: 0.2s ease-out;
-}
-
-.btn-send:hover {
-  background: #6d7a50;
-}
-
-/* ========================= */
-/* PONUDA PAGE – FIXES */
-/* ========================= */
-
-/* Desktop / general */
-body.page-ponuda main {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2.2rem 1.5rem 2rem;
-}
-
-body.page-ponuda .grid-3 {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
-  align-items: stretch;
-}
-
-body.page-ponuda .card {
-  background: var(--bg-alt);
-  border-radius: 1.2rem;
-  padding: 1.2rem 1.2rem 1.25rem;
-  border: 1px solid rgba(0,0,0,0.03);
-  color: var(--text-soft);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-body.page-ponuda .card-media {
-  width: 100%;
-  height: 220px;
-  border-radius: 1rem;
-  background: rgba(255,255,255,0.9);
-  border: 1px solid rgba(0,0,0,0.035);
-  padding: 0.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0.95rem;
-  overflow: hidden;
-}
-
-body.page-ponuda .card-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-body.page-ponuda .img-placeholder {
-  width: 100%;
-  height: 100%;
-  border-radius: 0.85rem;
-  background: linear-gradient(135deg, #f0ecdf, #e6decd);
-  border: 1px dashed rgba(0,0,0,0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #7a725f;
-  font-size: 0.85rem;
-  text-align: center;
-  padding: 0.6rem;
-}
-
-body.page-ponuda .card-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-body.page-ponuda .card-title {
-  font-size: 1.05rem;
-  color: var(--text);
-  font-weight: 600;
-  line-height: 1.25;
-}
-
-body.page-ponuda .price {
-  font-size: 1.05rem;
-  color: var(--accent);
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-body.page-ponuda .out {
-  margin-top: 0.55rem;
-  color: #b34a3c;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-/* Mobile */
-@media (max-width: 640px) {
-  body.page-ponuda main { padding: 1.6rem 1rem 2rem; }
-
-  body.page-ponuda .grid-3 {
-    grid-template-columns: 1fr;
-    gap: 1.1rem;
-  }
-
-  /* Najvažnije: da slika ne bude “zgnječena” */
-  body.page-ponuda .card-media {
-    height: 240px;
-    padding: 0.7rem;
-  }
-
-  /* Na telefonu bolje je da cena ide ispod naslova */
-  body.page-ponuda .card-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-  }
-
-  body.page-ponuda .price {
-    font-size: 1rem;
-  }
-}
