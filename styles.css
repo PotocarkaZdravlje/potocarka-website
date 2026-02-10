@@ -591,5 +591,29 @@ body.page-ponuda main {
   }
 
 }
+/* ========================= */
+/* DESKTOP HERO FINAL TUNING */
+/* ========================= */
+
+@media (min-width: 801px) {
+
+  /* centriraj tekst vertikalno */
+  .hero {
+    align-items: center !important;
+  }
+
+  /* smanji visinu slike da ne rastegne layout */
+  .hero-image {
+    max-height: 420px;
+    object-fit: cover;
+  }
+
+  /* malo kompaktniji razmaci */
+  .hero-text {
+    gap: 0.6rem;
+  }
+
+}
+
 
 
