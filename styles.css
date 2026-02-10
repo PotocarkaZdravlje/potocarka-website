@@ -542,4 +542,27 @@ body.page-ponuda main {
     font-size: 1rem;
   }
 }
+/* ========================= */
+/* DESKTOP – manje praznog prostora */
+/* telefon ostaje ISTI */
+/* ========================= */
+
+@media (min-width: 801px) {
+
+  .hero {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    gap: 1.3rem;
+    align-items: start;
+  }
+
+  .hero-title {
+    font-size: 1.45rem;
+  }
+
+  main {
+    padding-bottom: 2rem;
+  }
+
+}
 
