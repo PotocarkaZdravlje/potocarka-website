@@ -471,9 +471,10 @@ body.page-ponuda main {
 
 .card-img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
+  height: 300px;
+  object-fit: cover;
+  object-position: center 60%;
+  border-radius: 12px;
 }
 
 .img-placeholder {
